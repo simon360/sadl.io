@@ -1,7 +1,25 @@
 {
   "name": "sadl.io-root",
   "private": true,
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "normalize.css": "^8.0.1",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.5"
+  }
 }
