@@ -1,6 +1,5 @@
 import { withOptions } from "@storybook/addon-options";
 import { addDecorator, configure } from "@storybook/react";
-import "normalize.css";
 import styleDecorator from "../decorators/style";
 
 addDecorator(

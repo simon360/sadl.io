@@ -1,41 +1,46 @@
 import React from "react";
 import styled from "styled-components";
-import theme from "../../theme";
 
 const backgroundColor = props =>
-  ({ primary: theme.color.onDark.white, secondary: theme.color.primaryLighter }[
-    props.type || "primary"
-  ]);
+  ({
+    primary: props => props.theme.color.onDark.white,
+    secondary: props => props.theme.color.primaryLighter
+  }[props.type || "primary"]);
 
 const borderColor = props =>
-  ({ primary: theme.color.primary, secondary: theme.color.primaryLighter }[
-    props.type || "primary"
-  ]);
+  ({
+    primary: props => props.theme.color.primary,
+    secondary: props => props.theme.color.primaryLighter
+  }[props.type || "primary"]);
 
 const textColor = props =>
-  ({ primary: theme.color.primary, secondary: theme.color.onDark.white }[
-    props.type || "primary"
-  ]);
+  ({
+    primary: props => props.theme.color.primary,
+    secondary: props => props.theme.color.onDark.white
+  }[props.type || "primary"]);
 
 export default styled.button`
   background-color: ${backgroundColor};
-  border: ${theme.space.eighth} solid ${borderColor};
-  border-radius: ${theme.flourish.rounded.standard};
+  border: ${props => props.theme.space.eighth} solid ${borderColor};
+  border-radius: ${props => props.theme.flourish.rounded.standard};
   color: ${textColor};
-  font-family: ${theme.type.family};
-  padding: ${theme.space.half} ${theme.space.threeQuarters};
-  transition-duration: ${theme.animation.timings.one};
+  font-family: ${props => props.theme.type.family};
+  padding: ${props => props.theme.space.half}
+    ${props => props.theme.space.threeQuarters};
+  transition-duration: ${props => props.theme.animation.timings.one};
   transition-property: background-color, border, color;
 
   :hover,
   :focus {
-    background-color: ${theme.color.primary};
-    border: ${theme.space.eighth} solid ${theme.color.primary};
-    color: ${theme.color.onDark.white};
+    background-color: ${props => props.theme.color.primary};
+    border: ${props => props.theme.space.eighth} solid
+      ${props => props.theme.color.primary};
+    color: ${props => props.theme.color.onDark.white};
   }
 
   :active {
-    background-color: ${theme.color.primaryDarker};
-    border: ${theme.space.eighth} solid ${theme.color.primaryDarker};
+    background-color: ${props => props.theme.color.primaryDarker};
+    border: ${props => props.theme.space.eighth} solid
+      ${props => props.theme.color.primaryDarker};
   }
 `;

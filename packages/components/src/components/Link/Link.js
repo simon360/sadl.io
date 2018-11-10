@@ -1,10 +1,9 @@
 import styled from "styled-components";
-import theme from "../../theme";
 
 export default styled.a`
-  color: ${theme.color.primary};
+  color: ${props => props.theme.color.primary};
 
   :visited {
-    color: ${theme.color.primaryLighter};
+    color: ${props => props.theme.color.primaryLighter};
   }
 `;

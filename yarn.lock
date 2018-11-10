@@ -4483,11 +4483,6 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
-
 npm-bundled@^1.0.1:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
@@ -5977,6 +5972,11 @@ styled-components@^4.0.3:
     stylis "^3.5.0"
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
+
+styled-normalize@^8.0.3:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/styled-normalize/-/styled-normalize-8.0.3.tgz#c8d71240a0fa6e17d1443dd5aa837c8287a77f26"
+  integrity sha512-2PFV3BLYxlsQcdVkl0adUIzUB8/KyP6Uqd+XB/e/yiqUTrQHk6ZJ1XsRiMVyzdiEtHyY2yDTo5h01ITIEx9ibw==
 
 stylis-rule-sheet@^0.0.10:
   version "0.0.10"
