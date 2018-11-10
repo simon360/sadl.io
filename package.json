@@ -1,0 +1,7 @@
+{
+  "name": "sadl.io-root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

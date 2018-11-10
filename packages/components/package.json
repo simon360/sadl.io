@@ -1,0 +1,17 @@
+{
+  "name": "@sadl/components",
+  "version": "0.0.0",
+  "description": "The SADL components",
+  "main": "index.js",
+  "author": "Simon Andrews <hello@sadl.io>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.6.1",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^4.0.4",
+    "@storybook/addon-links": "^4.0.4",
+    "@storybook/react": "^4.0.4"
+  }
+}
