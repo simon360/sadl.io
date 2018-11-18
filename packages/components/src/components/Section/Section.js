@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Max width is 48 spacing units, minus one half on each side.
-const maxWidth = `calc(47 * ${props => props.theme.space.one})`;
+const maxWidth = css`calc(47 * ${props => props.theme.space.one})`;
 
 export default styled.section`
   margin: 0 auto;

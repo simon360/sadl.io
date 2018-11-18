@@ -3,8 +3,14 @@
   "private": true,
   "scripts": {
     "prebuild": "yarn cleanup",
-    "build": "yarn workspace @sadl/site-sadl.io build && mv packages/site-sadl.io/public .",
-    "cleanup": "rimraf ./public"
+    "build": "run-s build:components build:site-sadl.io build:deployable ",
+    "build:components": "yarn workspace @sadl/components build",
+    "build:site-sadl.io": "yarn workspace @sadl/site-sadl.io build",
+    "build:deployable": "cp -r packages/site-sadl.io/public .",
+    "cleanup": "yarn workspaces run cleanup && rimraf ./public",
+    "start": "run-p start:*",
+    "start:components": "yarn workspace @sadl/components start",
+    "start:site-sadl.io": "yarn workspace @sadl/site-sadl.io start"
   },
   "browserslist": [
     "last 1 version",
@@ -18,6 +24,7 @@
   "dependencies": {
     "@babel/core": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
+    "npm-run-all": "^4.1.3",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "styled-components": "^4.0.3",
