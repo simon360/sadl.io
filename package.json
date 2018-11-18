@@ -1,6 +1,11 @@
 {
-  "name": "sadl.io-root",
+  "name": "@sadl/sadl.io-root",
   "private": true,
+  "scripts": {
+    "prebuild": "yarn cleanup",
+    "build": "yarn workspace @sadl/site-sadl.io build && mv packages/site-sadl.io/public .",
+    "cleanup": "rimraf ./public"
+  },
   "browserslist": [
     "last 1 version",
     "> 1%",
@@ -20,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.5"
+    "@babel/preset-env": "^7.1.5",
+    "rimraf": "^2.6.2"
   }
 }
