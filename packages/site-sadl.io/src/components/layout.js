@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from "gatsby";
 import Base from "./base";
 import Header from "./header";
 
-import Cutter from "@sadl/components/components/Cutter";
+import Section from "@sadl/components/components/Section";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -32,17 +32,9 @@ const Layout = ({ children }) => (
         </Helmet>
         <Base>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Cutter bottomColor="white" topColor="rebeccapurple" />
-          <div
-            style={{
-              margin: "0 auto",
-              maxWidth: 960,
-              padding: "0px 1.0875rem 1.45rem",
-              paddingTop: 0
-            }}
-          >
+          <Section>
             {children}
-          </div>
+          </Section>
         </Base>
       </>
     )}
