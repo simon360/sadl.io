@@ -1,8 +1,5 @@
-import React from "react";
-import styled from "styled-components";
-
-const angleSvg =
-  "data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='currentColor' fill-rule='nonzero' d='M0 200V0h200z'/%3E%3C/svg%3E";
+import React from 'react';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   background-color: ${props => props.bottomColor};
@@ -13,8 +10,12 @@ const Wrapper = styled.div`
 
 const Inner = styled.svg`
   display: block;
-  height: ${props => props.theme.space.two};
+  height: ${props => props.theme.space.threeQuarters};
   width: 100vw;
+
+  @media (min-width: ${props => props.theme.viewportSizes.small}) {
+    height: ${props => props.theme.space.oneAndHalf};
+  }
 `;
 
 export default ({ bottomColor, topColor }) => (
@@ -24,7 +25,7 @@ export default ({ bottomColor, topColor }) => (
       viewBox="1 1 199 199"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path fill="currentColor" fill-rule="nonzero" d="M0 200V0h200z" />
+      <path fill="currentColor" fillRule="nonzero" d="M0 200V0h200z" />
     </Inner>
   </Wrapper>
 );
