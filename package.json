@@ -3,13 +3,15 @@
   "private": true,
   "scripts": {
     "prebuild": "yarn cleanup",
-    "build": "run-s build:components build:site-sadl.io build:deployable ",
+    "build": "run-s build:components build:site-sadl.io build:site-components build:deployable ",
     "build:components": "yarn workspace @sadl/components build",
     "build:site-sadl.io": "yarn workspace @sadl/site-sadl.io build",
-    "build:deployable": "cp -r packages/site-sadl.io/public .",
+    "build:site-components": "yarn workspace @sadl/site-components build",
+    "build:deployable": "cp -r packages/site-sadl.io/public . && cp -r packages/site-components/storybook-static public/system",
     "cleanup": "yarn workspaces run cleanup && rimraf ./public",
     "start": "run-p start:*",
     "start:components": "yarn workspace @sadl/components start",
+    "start:site-components": "yarn workspace @sadl/site-components start",
     "start:site-sadl.io": "yarn workspace @sadl/site-sadl.io start"
   },
   "browserslist": [
