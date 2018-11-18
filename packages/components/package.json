@@ -6,8 +6,9 @@
   "author": "Simon Andrews <hello@sadl.io>",
   "license": "MIT",
   "scripts": {
-    "start": "babel --watch src -d ./",
-    "build": "babel src -d ./"
+    "build": "babel src -d ./",
+    "cleanup": "rimraf components theme utilities",
+    "start": "babel --watch src -d ./"
   },
   "peerDependencies": {
     "react": "^16.6.1",
