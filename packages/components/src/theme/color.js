@@ -5,9 +5,13 @@ export default {
   primaryDarker: "rgb(47, 15, 86)",
   primary: "rgb(98, 66, 137)",
   primaryLighter: "rgb(149, 117, 188)",
+  white: "rgb(255, 255, 255)",
 
   onDark: {
-    primaryLightest: "rgb(236, 230, 243)",
+    text: "rgb(255, 255, 255)",
+    primaryDarker: "rgb(255, 255, 255)",
+    primary: "rgb(255, 255, 255)",
+    primaryLighter: "rgb(255, 255, 255)",
     white: "rgb(255, 255, 255)"
   }
 };
