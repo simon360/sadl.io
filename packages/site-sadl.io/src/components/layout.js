@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 
+import Base from "./base";
 import Header from "./header";
 
-import Base from "./base";
+import Cutter from "@sadl/components/components/Cutter";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -31,6 +32,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Base>
           <Header siteTitle={data.site.siteMetadata.title} />
+          <Cutter bottomColor="white" topColor="rebeccapurple" />
           <div
             style={{
               margin: "0 auto",
