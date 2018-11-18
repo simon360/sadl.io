@@ -13,6 +13,7 @@ const IndexPage = () => (
       SADL is a registered limited company in England and Wales (10271125). You can get in touch
       at <Link href="mailto:hello@sadl.io">hello@sadl.io</Link>.
     </Text>
+    <Text><Link href="/system">View the SADL design system</Link></Text>
   </Layout>
 );
 
