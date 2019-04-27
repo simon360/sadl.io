@@ -2,11 +2,8 @@ import React from "react";
 
 import Layout from "../components/layout";
 
-import {
-  BigHeading,
-  BiggerHeading,
-  VeryBigHeading
-} from "@sadl/components/components/Heading";
+import { BigHeading, BiggerHeading } from "@sadl/components/components/Heading";
+import Hero from "@sadl/components/components/Hero";
 import {
   Container,
   Grid,
@@ -19,9 +16,39 @@ import Link from "@sadl/components/components/Link";
 import Section from "@sadl/components/components/Section";
 import Text from "@sadl/components/components/Text";
 
-const IndexPage = () => (
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+
+export const query = graphql`
+  query {
+    heroImage: file(relativePath: { eq: "home/hero.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
+const IndexPage = ({ data }) => (
   <Layout>
     <Section>
+      <Hero
+        heading="What's SADL?"
+        img={
+          <Img
+            fluid={data.heroImage.childImageSharp.fluid}
+            imgStyle={{
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center 80%",
+              width: "100%"
+            }}
+            style={{ height: "100%", width: "100%" }}
+          />
+        }
+        text="SADL makes beautiful websites and web applications that scale. With a focus on simplicity, in implementation and in experience, SADL has built a reputation around building things the right way."
+      />
       <Container>
         <Grid>
           <GridItem34>
