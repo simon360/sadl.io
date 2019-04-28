@@ -38,25 +38,25 @@ const buttonSecondaryStyle = css`
   color: ${theme.color.onDark.white};
 `;
 
-const Button = ({ type, ...props }) => (
+const Button = ({ mode, ...props }) => (
   <button
     css={[
       buttonStyle,
-      type === "primary" ? buttonPrimaryStyle : buttonSecondaryStyle
+      mode === "primary" ? buttonPrimaryStyle : buttonSecondaryStyle
     ]}
     {...props}
   />
 );
 
 Button.defaultProps = {
-  type: "primary"
+  mode: "primary"
 };
 
 Button.propTypes = {
   /**
    * The style of button to show.
    */
-  type: PropTypes.oneOf(["primary", "secondary"])
+  mode: PropTypes.oneOf(["primary", "secondary"])
 };
 
 export default Button;

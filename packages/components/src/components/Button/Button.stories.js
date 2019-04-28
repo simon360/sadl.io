@@ -14,7 +14,7 @@ storiesOf("Components|Button", module)
   ))
   .add("secondary", () => (
     <Section>
-      <Button onClick={action("clicked")} type="secondary">
+      <Button onClick={action("clicked")} mode="secondary">
         Hello Button
       </Button>
     </Section>
