@@ -11,7 +11,7 @@ body {
 }
 `;
 
-export default storyFn => (
+const styleDecorator = storyFn => (
   <ThemeProvider>
     <React.Fragment>
       <Normalize />
@@ -20,3 +20,5 @@ export default storyFn => (
     </React.Fragment>
   </ThemeProvider>
 );
+
+export default styleDecorator;
