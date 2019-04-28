@@ -3,24 +3,23 @@ import PropTypes from "prop-types";
 
 import { createGlobalStyle } from "styled-components";
 import { Normalize } from "styled-normalize";
-import { ThemeProvider } from "@sadl/components/theme";
+
+import theme from "@sadl/components/theme";
 
 const Style = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
 
 body {
-  font-family: ${props => props.theme.type.family};
+  font-family: ${theme.type.family};
 }
 `;
 
 const Base = ({ children }) => (
-  <ThemeProvider>
-    <React.Fragment>
-      <Normalize />
-      <Style />
-      {children}
-    </React.Fragment>
-  </ThemeProvider>
+  <React.Fragment>
+    <Normalize />
+    <Style />
+    {children}
+  </React.Fragment>
 );
 
 Base.propTypes = {
