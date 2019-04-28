@@ -20,7 +20,6 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^5.0.0",
-    "@storybook/addon-links": "^5.0.0",
-    "@storybook/react": "^5.0.0"
+    "@storybook/addon-links": "^5.0.0"
   }
 }
