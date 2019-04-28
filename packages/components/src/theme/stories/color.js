@@ -23,15 +23,15 @@ const Wrapper = styled.ul`
 `;
 
 const Color = styled.ul`
+background-color: ${props => props.color};
   border: ${props =>
     props.inverse ? `${space.eighth} solid ${color.primary}` : "none"};
-  background-color: ${props => props.color};
   border-radius: ${flourish.rounded.standard};
   box-sizing: border-box;
   height: ${space.four};
-  margin-right: ${space.one};
   margin-bottom: calc(${space.one} + ${space.two});
   margin-left: 0;
+  margin-right: ${space.one};
   padding-left: 0;
   position: relative;
   width: ${space.four};
@@ -39,8 +39,8 @@ const Color = styled.ul`
   &::after {
     align-items: center;
     background-color: rgba(255, 255, 255, 0.5);
-    content: '${props => props.name}';
     color: ${props => (props.inverse ? color.primary : props.color)};
+    content: '${props => props.name}';
     display: flex;
     height: ${space.one};
     justify-content: center;
@@ -48,8 +48,8 @@ const Color = styled.ul`
     margin-top: ${space.half};
     opacity: 0;
     position: absolute;
-    transition: opacity ${animation.timings.one};
     top: 100%;
+    transition: opacity ${animation.timings.one};
     width: 100%;
   }
 

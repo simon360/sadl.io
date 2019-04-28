@@ -1,11 +1,13 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 // Max width is 48 spacing units, minus one half on each side.
-const maxWidth = css`calc(47 * ${props => props.theme.space.one})`;
+const maxWidth = css`
+  max-width: calc(47 * ${props => props.theme.space.one});
+`;
 
 export const Container = styled.div`
-  max-width: ${maxWidth};
   margin: 0 auto;
+  ${maxWidth}
   padding-bottom: ${props => props.theme.space.one};
   padding-left: ${props => props.theme.space.half};
   padding-right: ${props => props.theme.space.half};
@@ -13,8 +15,8 @@ export const Container = styled.div`
 `;
 
 export const Grid = styled.div`
-  display: grid;
   column-gap: ${props => props.theme.space.half};
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   row-gap: ${props => props.theme.space.one};
 
@@ -61,7 +63,7 @@ export const GridItem34 = styled.div`
 
 export const GridItemFull = styled.div`
   grid-column: span 3;
-  
+
   @media (min-width: ${props => props.theme.viewportSizes.small}) {
     grid-column: span 6;
   }
@@ -72,8 +74,8 @@ export const GridItemFull = styled.div`
 `;
 
 export const GridItemCentered = styled(GridItemFull)`
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 `;
 
