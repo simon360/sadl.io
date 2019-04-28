@@ -9,6 +9,8 @@
     "build:site-components": "yarn workspace @sadl/site-components build",
     "build:deployable": "cp -r packages/site-sadl.io/public . && cp -r packages/site-components/storybook-static public/system",
     "cleanup": "yarn workspaces run cleanup && rimraf ./public",
+    "lint": "run-s lint:*",
+    "lint:js": "eslint .",
     "start": "run-p start:*",
     "start:components": "yarn workspace @sadl/components start",
     "start:site-components": "yarn workspace @sadl/site-components start",
@@ -35,6 +37,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4",
     "rimraf": "^2.6.2"
   }
 }
