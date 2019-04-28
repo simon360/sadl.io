@@ -1,15 +1,13 @@
 const path = require("path");
 
-module.exports = (baseConfig, env, defaultConfig) => {
-  const indexMatchesJs = defaultConfig.module.rules.findIndex(r =>
+module.exports = ({ config }) => {
+  const indexMatchesJs = config.module.rules.findIndex(r =>
     r.test.test("main.js")
   );
 
-  console.log(indexMatchesJs);
+  config.module.rules.splice(indexMatchesJs, 1);
 
-  defaultConfig.module.rules.splice(indexMatchesJs, 1);
-
-  defaultConfig.module.rules.push({
+  config.module.rules.push({
     test: /\.(m?jsx?)$/,
     use: {
       loader: "babel-loader",
@@ -19,5 +17,5 @@ module.exports = (baseConfig, env, defaultConfig) => {
     }
   });
 
-  return defaultConfig;
+  return config;
 };
