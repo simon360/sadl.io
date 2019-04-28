@@ -1,29 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { css } from "@emotion/core";
 
 import { VeryBigHeading } from "@sadl/components/components/Heading";
 import Text from "@sadl/components/components/Text";
+import theme from "@sadl/components/theme";
 
-const Wrapper = styled.div`
+const wrapperStyle = css`
   overflow: hidden;
   position: relative;
   width: 100%;
 `;
 
-const Inner = styled.div`
+const innerStyle = css`
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: ${props => props.theme.space.three} ${props => props.theme.space.two};
+  padding: ${theme.space.three} ${theme.space.two};
   text-align: center;
 `;
 
-const InnerContent = styled.div`
+const innerContentStyle = css`
   margin: 0 auto;
-  max-width: calc(${props => props.theme.space.one} * 24);
+  max-width: calc(${theme.space.one} * 24);
 `;
 
-const Background = styled.div`
+const backgroundStyle = css`
   bottom: 0;
   left: 0;
   position: absolute;
@@ -33,15 +34,16 @@ const Background = styled.div`
 `;
 
 const Hero = ({ heading, img, text }) => (
-  <Wrapper>
-    <Background>{img}</Background>
-    <Inner>
-      <InnerContent>
+  <div css={wrapperStyle}>
+    <div css={backgroundStyle}>{img}</div>
+
+    <div css={innerStyle}>
+      <div css={innerContentStyle}>
         <VeryBigHeading isOnDark>{heading}</VeryBigHeading>
         <Text>{text}</Text>
-      </InnerContent>
-    </Inner>
-  </Wrapper>
+      </div>
+    </div>
+  </div>
 );
 
 Hero.propTypes = {

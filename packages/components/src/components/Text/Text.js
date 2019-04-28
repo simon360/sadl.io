@@ -1,20 +1,22 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
+
+import theme from "@sadl/components/theme";
 
 export default styled.p`
-  color: ${props => props.theme.color.textPrimary};
-  font-size: ${props => props.theme.type.size.standard};
-  line-height: ${props => props.theme.type.lineHeights.normal};
-  margin-bottom: ${props => props.theme.space.threeQuarters};
+  color: ${theme.color.textPrimary};
+  font-size: ${theme.type.size.standard};
+  line-height: ${theme.type.lineHeights.normal};
+  margin-bottom: ${theme.space.threeQuarters};
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
 `;
 
 export const SmallText = styled.small`
-  color: ${props => props.theme.color.textPrimary};
-  font-size: ${props => props.theme.type.size.small};
+  color: ${theme.color.textPrimary};
+  font-size: ${theme.type.size.small};
   font-variant: small-caps;
-  line-height: ${props => props.theme.type.lineHeights.normal};
+  line-height: ${theme.type.lineHeights.normal};
   margin: 0;
   text-transform: lowercase;
 `;

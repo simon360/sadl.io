@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 import { storiesOf } from "@storybook/react";
 
@@ -23,7 +23,7 @@ const Wrapper = styled.ul`
 `;
 
 const Color = styled.ul`
-background-color: ${props => props.color};
+  background-color: ${props => props.color};
   border: ${props =>
     props.inverse ? `${space.eighth} solid ${color.primary}` : "none"};
   border-radius: ${flourish.rounded.standard};

@@ -1,9 +1,11 @@
-import styled from "styled-components";
+import styled from "@emotion/styled";
+
+import theme from "@sadl/components/theme";
 
 export default styled.a`
-  color: ${props => props.theme.color.primary};
+  color: ${theme.color.primary};
 
   :visited {
-    color: ${props => props.theme.color.primaryLighter};
+    color: ${theme.color.primaryLighter};
   }
 `;

@@ -1,45 +1,62 @@
-import styled from "styled-components";
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "@emotion/core";
 
-const backgroundColor = props =>
-  ({
-    primary: props => props.theme.color.onDark.white,
-    secondary: props => props.theme.color.primaryLighter
-  }[props.type || "primary"]);
+import theme from "@sadl/components/theme";
 
-const borderColor = props =>
-  ({
-    primary: props => props.theme.color.primary,
-    secondary: props => props.theme.color.primaryLighter
-  }[props.type || "primary"]);
-
-const textColor = props =>
-  ({
-    primary: props => props.theme.color.primary,
-    secondary: props => props.theme.color.onDark.white
-  }[props.type || "primary"]);
-
-export default styled.button`
-  background-color: ${backgroundColor};
-  border: ${props => props.theme.space.eighth} solid ${borderColor};
-  border-radius: ${props => props.theme.flourish.rounded.standard};
-  color: ${textColor};
-  font-family: ${props => props.theme.type.family};
-  padding: ${props => props.theme.space.half}
-    ${props => props.theme.space.threeQuarters};
-  transition-duration: ${props => props.theme.animation.timings.one};
+const buttonStyle = css`
+  border-radius: ${theme.flourish.rounded.standard};
+  border-style: solid;
+  border-width: ${theme.space.eighth};
+  font-family: ${theme.type.family};
+  padding: ${theme.space.half} ${theme.space.threeQuarters};
+  transition-duration: ${theme.animation.timings.one};
   transition-property: background-color, border, color;
 
   :hover,
   :focus {
-    background-color: ${props => props.theme.color.primary};
-    border: ${props => props.theme.space.eighth} solid
-      ${props => props.theme.color.primary};
-    color: ${props => props.theme.color.onDark.white};
+    background-color: ${theme.color.primary};
+    border: ${theme.space.eighth} solid ${theme.color.primary};
+    color: ${theme.color.onDark.white};
   }
 
   :active {
-    background-color: ${props => props.theme.color.primaryDarker};
-    border: ${props => props.theme.space.eighth} solid
-      ${props => props.theme.color.primaryDarker};
+    background-color: ${theme.color.primaryDarker};
+    border: ${theme.space.eighth} solid ${theme.color.primaryDarker};
   }
 `;
+
+const buttonPrimaryStyle = css`
+  background-color: ${theme.color.onDark.white};
+  border-color: ${theme.color.primary};
+  color: ${theme.color.primary};
+`;
+
+const buttonSecondaryStyle = css`
+  background-color: ${theme.color.primaryLighter};
+  border-color: ${theme.color.primaryLighter};
+  color: ${theme.color.onDark.white};
+`;
+
+const Button = ({ mode, ...props }) => (
+  <button
+    css={[
+      buttonStyle,
+      mode === "primary" ? buttonPrimaryStyle : buttonSecondaryStyle
+    ]}
+    {...props}
+  />
+);
+
+Button.defaultProps = {
+  mode: "primary"
+};
+
+Button.propTypes = {
+  /**
+   * The style of button to show.
+   */
+  mode: PropTypes.oneOf(["primary", "secondary"])
+};
+
+export default Button;

@@ -1,34 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { css } from "@emotion/core";
 
-const Wrapper = styled.div`
-  background-color: ${props => props.bottomColor};
-  color: ${props => props.topColor};
+import theme from "@sadl/components/theme";
+
+const wrapperStyle = css`
   overflow: hidden;
   width: 100%;
 `;
 
-const Inner = styled.svg`
+const innerStyle = css`
   display: block;
-  height: ${props => props.theme.space.threeQuarters};
+  height: ${theme.space.threeQuarters};
   width: 100vw;
 
-  @media (min-width: ${props => props.theme.viewportSizes.small}) {
-    height: ${props => props.theme.space.oneAndHalf};
+  @media (min-width: ${theme.viewportSizes.small}) {
+    height: ${theme.space.oneAndHalf};
   }
 `;
 
 const Cutter = ({ bottomColor, topColor }) => (
-  <Wrapper bottomColor={bottomColor} topColor={topColor}>
-    <Inner
+  <div
+    css={[
+      wrapperStyle,
+      css`
+        background-color: ${bottomColor};
+        color: ${topColor};
+      `
+    ]}
+  >
+    <svg
+      css={innerStyle}
       preserveAspectRatio="none"
       viewBox="1 1 199 199"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path fill="currentColor" fillRule="nonzero" d="M0 200V0h200z" />
-    </Inner>
-  </Wrapper>
+    </svg>
+  </div>
 );
 
 Cutter.propTypes = {

@@ -1,9 +1,41 @@
-import styled from "styled-components";
+import React from "react";
+import PropTypes from "prop-types";
+import { css } from "@emotion/core";
 
-export default styled.section`
-  margin-bottom: ${props =>
-    props.bottom ? props.theme.space[props.bottom] : 0};
-  margin-left: ${props => (props.left ? props.theme.space[props.left] : 0)};
-  margin-right: ${props => (props.right ? props.theme.space[props.right] : 0)};
-  margin-top: ${props => (props.top ? props.theme.space[props.top] : 0)};
-`;
+import theme from "@sadl/components/theme";
+
+const Spacing = ({ bottom, left, right, top, ...props }) => (
+  <div
+    css={css`
+      margin-bottom: ${bottom ? theme.space[bottom] : 0};
+      margin-left: ${left ? theme.space[left] : 0};
+      margin-right: ${right ? theme.space[right] : 0};
+      margin-top: ${top ? theme.space[top] : 0};
+    `}
+    {...props}
+  />
+);
+
+Spacing.propTypes = {
+  /**
+   * Amount of spacing on bottom
+   */
+  bottom: PropTypes.oneOf(Object.keys(theme.space)),
+
+  /**
+   * Amount of spacing on left
+   */
+  left: PropTypes.oneOf(Object.keys(theme.space)),
+
+  /**
+   * Amount of spacing on right
+   */
+  right: PropTypes.oneOf(Object.keys(theme.space)),
+
+  /**
+   * Amount of spacing on top
+   */
+  top: PropTypes.oneOf(Object.keys(theme.space))
+};
+
+export default Spacing;
