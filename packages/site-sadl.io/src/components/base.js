@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { createGlobalStyle } from "styled-components";
 import { Normalize } from "styled-normalize";
 import { ThemeProvider } from "@sadl/components/theme";
@@ -11,7 +13,7 @@ body {
 }
 `;
 
-export default ({children}) => (
+const Base = ({ children }) => (
   <ThemeProvider>
     <React.Fragment>
       <Normalize />
@@ -20,3 +22,12 @@ export default ({children}) => (
     </React.Fragment>
   </ThemeProvider>
 );
+
+Base.propTypes = {
+  /**
+   * Child element(s).
+   */
+  children: PropTypes.node
+};
+
+export default Base;
