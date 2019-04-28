@@ -11,6 +11,7 @@
     "start": "babel --watch src -d ./"
   },
   "peerDependencies": {
+    "@emotion/core": "^10.0.10",
     "react": "^16.6.1",
     "styled-components": "^4.0.3",
     "styled-normalize": "^8.0.3"
