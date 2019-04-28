@@ -32,9 +32,7 @@ const Layout = ({ children }) => (
         </Helmet>
         <Base>
           <Header siteTitle={data.site.siteMetadata.title} />
-          <Section>
-            {children}
-          </Section>
+          <Section>{children}</Section>
         </Base>
       </>
     )}
