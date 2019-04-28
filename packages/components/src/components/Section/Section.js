@@ -1,34 +1,25 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { css } from "@emotion/core";
 
-import Cutter from "../Cutter";
-
-import systemTheme, { ThemeProvider } from "../../theme";
-
-const SectionElement = styled.section`
-  background-color: ${props =>
-    props.mode === "dark" ? systemTheme.color.primary : "none"};
-  color: ${props =>
-    props.mode === "dark" ? systemTheme.color.white : systemTheme.color.text};
-`;
+import Cutter from "@sadl/components/components/Cutter";
+import theme from "@sadl/components/theme";
 
 const Section = ({ children, mode, cutter }) => (
-  <SectionElement mode={mode}>
-    <ThemeProvider mode={mode}>
-      <>{children}</>
-    </ThemeProvider>
+  <section
+    css={css`
+      background-color: ${mode === "dark" ? theme.color.primary : "none"};
+      color: ${mode === "dark" ? theme.color.white : theme.color.text};
+    `}
+  >
+    {children}
     {cutter ? (
       <Cutter
-        bottomColor={
-          mode === "light" ? systemTheme.color.primary : systemTheme.color.white
-        }
-        topColor={
-          mode === "light" ? systemTheme.color.white : systemTheme.color.primary
-        }
+        bottomColor={mode === "light" ? theme.color.primary : theme.color.white}
+        topColor={mode === "light" ? theme.color.white : theme.color.primary}
       />
     ) : null}
-  </SectionElement>
+  </section>
 );
 
 Section.defaultProps = {
