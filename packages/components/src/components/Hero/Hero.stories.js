@@ -1,10 +1,7 @@
 import React from "react";
-
 import { storiesOf } from "@storybook/react";
 
 import Hero from ".";
-
-import theme from "../../theme";
 
 import sampleImage from "./sampleImage.jpg";
 

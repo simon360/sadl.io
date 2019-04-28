@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   background-color: ${props => props.bottomColor};
@@ -18,7 +19,7 @@ const Inner = styled.svg`
   }
 `;
 
-export default ({ bottomColor, topColor }) => (
+const Cutter = ({ bottomColor, topColor }) => (
   <Wrapper bottomColor={bottomColor} topColor={topColor}>
     <Inner
       preserveAspectRatio="none"
@@ -29,3 +30,17 @@ export default ({ bottomColor, topColor }) => (
     </Inner>
   </Wrapper>
 );
+
+Cutter.propTypes = {
+  /**
+   * The color to use on the bottom portion of this Cutter.
+   */
+  bottomColor: PropTypes.string.isRequired,
+
+  /**
+   * The color to use on the bottom portion of this Cutter.
+   */
+  topColor: PropTypes.string.isRequired
+};
+
+export default Cutter;

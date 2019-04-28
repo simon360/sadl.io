@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import theme from './theme';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import theme from "./theme";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const ThemeProvider = ({ children, mode }) => {
   const themeToUse = {
     ...theme,
     color:
-      mode === 'light'
+      mode === "light"
         ? { ...theme.color }
-        : { ...theme.color.onDark, onDark: theme.color },
+        : { ...theme.color.onDark, onDark: theme.color }
   };
 
   return (
@@ -18,11 +18,19 @@ const ThemeProvider = ({ children, mode }) => {
 };
 
 ThemeProvider.defaultProps = {
-  mode: 'light',
+  mode: "light"
 };
 
 ThemeProvider.propTypes = {
-  mode: PropTypes.oneOf(['light', 'dark']),
+  /**
+   * Child element(s).
+   */
+  children: PropTypes.node,
+
+  /**
+   * The style mode to use within this ThemeProvider.
+   */
+  mode: PropTypes.oneOf(["light", "dark"])
 };
 
 export default ThemeProvider;

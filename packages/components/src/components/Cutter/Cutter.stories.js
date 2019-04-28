@@ -1,12 +1,9 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 
 import AngledLine from "../AngledLine";
 import Cutter from "./";
-import Section from "../Section";
 
 import theme from "../../theme";
 

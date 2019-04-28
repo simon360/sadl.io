@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import {
@@ -27,5 +28,12 @@ const Header = ({ siteTitle }) => (
     </Section>
   </>
 );
+
+Header.propTypes = {
+  /**
+   * The title of the site. Used as a title on the logo.
+   */
+  siteTitle: PropTypes.string.isRequired
+};
 
 export default Header;

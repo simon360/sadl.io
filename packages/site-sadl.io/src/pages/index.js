@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Layout from "../components/layout";
 
@@ -9,8 +10,7 @@ import {
   Grid,
   GridItem12,
   GridItem14,
-  GridItem34,
-  GridItemFull
+  GridItem34
 } from "@sadl/components/components/Layout";
 import Link from "@sadl/components/components/Link";
 import Section from "@sadl/components/components/Section";
@@ -30,6 +30,7 @@ export const query = graphql`
     }
   }
 `;
+
 const IndexPage = ({ data }) => (
   <Layout>
     <Section>
@@ -69,7 +70,7 @@ const IndexPage = ({ data }) => (
                 <BigHeading>Sustainability</BigHeading>
                 <Text>
                   The web should last. A website that provides valuable
-                  information shouldn't ever stop; that means writing code that
+                  information shouldn’t ever stop; that means writing code that
                   can be understood and maintained, and making it easy to run
                   that code in the real world, for a very long time.
                 </Text>
@@ -145,5 +146,14 @@ const IndexPage = ({ data }) => (
     </Section>
   </Layout>
 );
+
+IndexPage.propTypes = {
+  /**
+   * The data returned from the page query.
+   */
+  data: PropTypes.shape({
+    heroImage: PropTypes.shape({})
+  })
+};
 
 export default IndexPage;
