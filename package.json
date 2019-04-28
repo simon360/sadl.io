@@ -27,6 +27,27 @@
     "maintained node versions",
     "not dead"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "stylelint",
+      "prettier --write",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -44,6 +65,8 @@
     "@babel/preset-env": "^7.1.5",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
+    "husky": "^2.1.0",
+    "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.2",
     "stylelint": "^10.0.1",
