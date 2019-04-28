@@ -1,23 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { createGlobalStyle } from "styled-components";
-import { Normalize } from "styled-normalize";
+import { css, Global } from "@emotion/core";
+import emotionNormalize from "emotion-normalize";
 
 import theme from "@sadl/components/theme";
 
-const Style = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+const globalFontStyle = css`
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
 
-body {
-  font-family: ${theme.type.family};
-}
+  body {
+    font-family: ${theme.type.family};
+  }
 `;
-
 const Base = ({ children }) => (
   <React.Fragment>
-    <Normalize />
-    <Style />
+    <Global styles={emotionNormalize} />
+    <Global styles={globalFontStyle} />
     {children}
   </React.Fragment>
 );
