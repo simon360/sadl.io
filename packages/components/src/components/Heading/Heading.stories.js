@@ -1,7 +1,6 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
 
 import { BiggerHeading, BigHeading, HugeHeading, VeryBigHeading } from "./";
 import Section from "../Section";
@@ -20,14 +19,14 @@ storiesOf("Components|Heading", module)
   .add("very big", () => (
     <Section>
       <VeryBigHeading>
-        I'd like to take a minute, just sit right there
+        I’d like to take a minute, just sit right there
       </VeryBigHeading>
     </Section>
   ))
   .add("huge", () => (
     <Section>
       <HugeHeading>
-        I'll tell you how I became the prince of a town called Bel-Air
+        I’ll tell you how I became the prince of a town called Bel-Air
       </HugeHeading>
     </Section>
   ));

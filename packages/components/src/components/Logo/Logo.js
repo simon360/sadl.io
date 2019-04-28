@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 const pulsate = keyframes`
   0% {
@@ -46,7 +47,24 @@ const Logo = ({ height, width, title }) => (
 );
 
 Logo.defaultProps = {
-  title: 'Simon Andrews Development Limited',
+  title: "Simon Andrews Development Limited"
+};
+
+Logo.propTypes = {
+  /**
+   * The (optional) height of this logo.
+   */
+  height: PropTypes.string,
+
+  /**
+   * The title, used as alt text.
+   */
+  title: PropTypes.string,
+
+  /**
+   * The (optional) width of this logo.
+   */
+  width: PropTypes.string
 };
 
 export default Logo;

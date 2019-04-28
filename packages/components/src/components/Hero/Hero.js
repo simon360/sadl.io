@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 import { VeryBigHeading } from "@sadl/components/components/Heading";
@@ -31,13 +32,7 @@ const Background = styled.div`
   z-index: -1;
 `;
 
-const BackgroundImage = styled.img`
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-`;
-
-export default ({ heading, img, text }) => (
+const Hero = ({ heading, img, text }) => (
   <Wrapper>
     <Background>{img}</Background>
     <Inner>
@@ -48,3 +43,24 @@ export default ({ heading, img, text }) => (
     </Inner>
   </Wrapper>
 );
+
+Hero.propTypes = {
+  /**
+   * The text to use as a heading.
+   */
+  heading: PropTypes.string.isRequired,
+
+  /**
+   * An image element to use as the background.
+   *
+   * Should have width and height set to 100%, and configure object-fit and object-position.
+   */
+  img: PropTypes.node.isRequired,
+
+  /**
+   * A short blurb to use as the main hero content.
+   */
+  text: PropTypes.string.isRequired
+};
+
+export default Hero;

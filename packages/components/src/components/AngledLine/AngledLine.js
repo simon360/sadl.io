@@ -17,8 +17,10 @@ const Inner = styled.div`
   width: 100vw;
 `;
 
-export default () => (
+const AngledLine = () => (
   <Wrapper>
     <Inner />
   </Wrapper>
 );
+
+export default AngledLine;

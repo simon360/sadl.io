@@ -1,9 +1,18 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import styled from 'styled-components';
+import React from "react";
+import PropTypes from "prop-types";
+import { storiesOf } from "@storybook/react";
+import styled from "styled-components";
 
-import { Container, Grid, GridItem12, GridItem14, GridItem34, GridItemInset, Stack } from './';
-import theme from '../../theme';
+import {
+  Container,
+  Grid,
+  GridItem12,
+  GridItem14,
+  GridItem34,
+  GridItemInset,
+  Stack
+} from "./";
+import theme from "../../theme";
 
 const Tile = styled.div`
   background-color: ${props => props.color};
@@ -15,7 +24,7 @@ const tileColors = [
   theme.color.primaryLighter,
   theme.color.primaryDarker,
   theme.color.primaryLighter,
-  theme.color.primaryDarker,
+  theme.color.primaryDarker
 ];
 
 const Tiles = ({ repeat }) => (
@@ -26,7 +35,14 @@ const Tiles = ({ repeat }) => (
   </>
 );
 
-storiesOf('Components|Layout', module).add('Grid', () => (
+Tiles.propTypes = {
+  /**
+   * The number of tiles to show.
+   */
+  repeat: PropTypes.number.isRequired
+};
+
+storiesOf("Components|Layout", module).add("Grid", () => (
   <Container>
     <Grid>
       <Tiles repeat={24} />

@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { storiesOf } from "@storybook/react";
-// import { linkTo } from "@storybook/addon-links";
 
-import color from "../color";
 import type from "../type";
 
 import { HugeHeading } from "../../components/Heading";
